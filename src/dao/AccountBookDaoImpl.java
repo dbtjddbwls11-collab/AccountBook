@@ -25,16 +25,16 @@ public class AccountBookDaoImpl implements implementssAccountBookDao {
 		System.out.print("수입/지출 선택 (수입 또는 지출 입력) = ");
 		dto.setIokind(sc.next());
 		
-		System.out.print("금액 (돈) = ");
+		System.out.print("금액 = ");
 		dto.setMoney(sc.nextInt());
 		
-		System.out.print("제목 (title) = ");
+		System.out.print("제목 = ");
 		dto.setTitle(sc.next());
 		
-		System.out.print("내용 (content) = ");
+		System.out.print("내용 = ");
 		dto.setcontent(sc.next());
 		
-		System.out.print("날짜 (adate, 예: 2026-06-09) = ");
+		System.out.print("날짜 (예:26.06.09) = ");
 		dto.setadate(sc.next());
 		
 		Singleton single = Singleton.getInstance();		
@@ -48,7 +48,7 @@ public class AccountBookDaoImpl implements implementssAccountBookDao {
 
 	public void delete() {
 		System.out.println("\n=== 데이터 삭제 ===");
-		System.out.print("삭제할 데이터의 제목(title) 입력 = ");		
+		System.out.print("삭제할 데이터의 제목 입력 = ");		
 		String title = sc.next();
 		
 		int index = search(title);        
@@ -65,7 +65,7 @@ public class AccountBookDaoImpl implements implementssAccountBookDao {
 
 	public void update() {
 		System.out.println("\n=== 데이터 수정 ===");
-		System.out.print("수정할 데이터의 제목(title) 입력 = ");		
+		System.out.print("수정할 데이터의 제목 입력 = ");		
 		String title = sc.next();
 		
 		int index = search(title);		
@@ -74,7 +74,7 @@ public class AccountBookDaoImpl implements implementssAccountBookDao {
 			return;
 		}
 		
-		System.out.print("수정할 내용(content) 입력 = ");
+		System.out.print("수정할 내용 입력 = ");
 		String content = sc.next();
 		
 		Singleton single = Singleton.getInstance();	
@@ -86,7 +86,7 @@ public class AccountBookDaoImpl implements implementssAccountBookDao {
 
 	public void selectTitle() {
 		System.out.println("\n=== 1. 제목 검색 ===");
-		System.out.print("검색할 제목(title) = ");		
+		System.out.print("검색할 제목 = ");		
 		String title = sc.next();
 		
 		List<AccountBookDto> findList = new ArrayList<>();
@@ -110,7 +110,7 @@ public class AccountBookDaoImpl implements implementssAccountBookDao {
 
 	public void selectAdate() {
 		System.out.println("\n=== 2. 날짜 검색 ===");
-		System.out.print("검색할 날짜(adate, 예: 2026-06-09) = ");		
+		System.out.print("검색할 날짜(adate, 예: 26.06.09) = ");		
 		String adate = sc.next();
 		
 		List<AccountBookDto> findList = new ArrayList<>();
@@ -134,7 +134,7 @@ public class AccountBookDaoImpl implements implementssAccountBookDao {
 
 	public void monthlySummary() {
 		System.out.println("\n=== 3. 월별 결산 ===");
-		System.out.print("결산할 년-월 입력 (예: 2026-06) = ");
+		System.out.print("결산할 년-월 입력 (예: 26.06) = ");
 		String yearMonth = sc.next();
 		
 		int totalIncome = 0;
